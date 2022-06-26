@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -6,26 +7,43 @@ void main() {
 }
 
 class Myapp extends StatelessWidget {
-  String judul = "My app";
-  int count = 0;
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: judul,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("My App"),
+          title: const Text("My App"),
         ),
-        body: Center(
-          child: Text("ini body scaffold"),
+        body: const Center(
+          child: Text("ini body scaffold lorem dsjada jsaj dias   sa hdsadnas hdoasihdois dsadns adhsauidhisadasndjsadsiabiasacabc ca c dacbahcadhcudah chdbcbid bca fu hfhau f aodeuh aakhdu hadhuoah deuiab",
+          maxLines: 3,
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 30,
+            backgroundColor: Colors.amber,
+            color: Colors.black,
+            decorationStyle: TextDecorationStyle.wavy,
+            decoration: TextDecoration.lineThrough,
+            decorationColor: Color.fromARGB(255, 151, 56, 56),
+            decorationThickness: 3,
+            letterSpacing: 3,
+            fontFamily: 'OleoScriptSwashCaps'
+          ),
+          ),
+        ),
+        bottomNavigationBar: BottomAppBar(
+          shape: const CircularNotchedRectangle(),
+          child: Container(height: 50.0),
         ),
         floatingActionButton: FloatingActionButton(
           tooltip: 'Increment counter',
-          onPressed: () => AlertDialog(),
-          child: Icon(Icons.add),
+          onPressed: () => const AlertDialog(),
+          child: const Icon(Icons.add),
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        backgroundColor: Colors.white70,
       ),
     );
   }
